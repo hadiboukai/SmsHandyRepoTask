@@ -36,9 +36,9 @@
     </junit>
   </target>
 
-  <target name="fibonacci">
+  <target name="src">
     <antcall target="test">
-      <param name="current_task" value="fibonacci"/>
+      <param name="current_task" value="src"/>
     </antcall>
   </target>
 
