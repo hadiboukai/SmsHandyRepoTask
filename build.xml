@@ -1,0 +1,48 @@
+<project name="INLOOP example checker" default="fail" basedir=".">
+  <path id="lib.thirdparty">
+    <fileset dir="lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <property name="build.dir" value="/checker/scratch/build"/>
+  <property name="checker.input" value="/checker/input"/>
+  <property name="checker.output" value="/checker/output/storage"/>
+
+  <target name="compile">
+    <mkdir dir="${build.dir}"/>
+    <javac destdir="${build.dir}" debug="true" includeantruntime="false">
+      <src path="${checker.input}"/>
+      <src path="${current_task}/tests"/>
+      <include name="**/*.java"/>
+      <classpath refid="lib.thirdparty"/>
+      <compilerarg value="-Xlint"/>
+    </javac>
+  </target>
+
+  <target name="test" depends="compile">
+    <junit fork="true" forkmode="once" haltonfailure="true"
+           printsummary="true" tempdir="${build.dir}">
+      <classpath>
+        <path refid="lib.thirdparty"/>
+        <pathelement path="${build.dir}"/>
+      </classpath>
+      <formatter type="xml"/>
+      <batchtest todir="${checker.output}">
+        <fileset dir="${current_task}/tests">
+          <include name="**/*Test*.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+  <target name="fibonacci">
+    <antcall target="test">
+      <param name="current_task" value="fibonacci"/>
+    </antcall>
+  </target>
+
+  <target name="fail">
+    <fail message="Must specify a target."/>
+  </target>
+</project>
