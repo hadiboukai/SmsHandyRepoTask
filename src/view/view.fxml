@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #00ffff;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ViewController">
+    <children>
+        <VBox layoutX="41.0" layoutY="225.0" prefHeight="281.0" prefWidth="850.0" spacing="10.0">
+            <children>
+                <TableView fx:id="smsHandyTable" prefHeight="149.0" prefWidth="700.0">
+                    <columns>
+                        <TableColumn fx:id="typeNameColumn" prefWidth="120.0" text="Type" />
+                        <TableColumn fx:id="modelColumn" prefWidth="170.0" text="Model" />
+                        <TableColumn fx:id="numberColumn" prefWidth="202.0" text="Number" />
+                        <TableColumn fx:id="providerColumn" prefWidth="153.0" text="Provider" />
+                        <TableColumn fx:id="amountColumn" prefWidth="153.0" text="Provider" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <ChoiceBox fx:id="typeChoiceBox" prefHeight="26.0" prefWidth="109.0" />
+                        <TextField fx:id="modelTextField" promptText="Type model" />
+                        <TextField fx:id="numberTextField" prefWidth="175.0" promptText="Input number" />
+                        <ChoiceBox fx:id="providerChoiceBox" prefWidth="150.0" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#putNewHandy" prefHeight="26.0" prefWidth="153.0" text="Add new handy" />
+                        <Button mnemonicParsing="false" onAction="#deleteHandy" prefWidth="175.0" text="Delete handy" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <Label layoutX="528.0" layoutY="14.0" text="Delete provider" textFill="#101010">
+            <font>
+                <Font name="System Bold" size="21.0" />
+            </font>
+        </Label>
+        <TextField fx:id="newProviderTextfield" layoutX="171.0" layoutY="52.0" promptText="Input name of provider" />
+        <Button fx:id="addProviderButton" layoutX="359.0" layoutY="52.0" mnemonicParsing="false" onAction="#putNewProvider" text="Add provider" textFill="#403939" />
+        <Label fx:id="resulLabel" layoutX="48.0" layoutY="90.0" />
+        <ChoiceBox fx:id="deleteProvChoiceBox" layoutX="531.0" layoutY="52.0" prefWidth="150.0" />
+        <Label layoutX="171.0" layoutY="14.0" text="Add new provider" textFill="#101010">
+            <font>
+                <Font name="System Bold" size="21.0" />
+            </font>
+        </Label>
+        <Button layoutX="697.0" layoutY="52.0" mnemonicParsing="false" onAction="#deleteProvider" text="Delete provider" />
+      <ChoiceBox fx:id="changeProviderChoiceBox" layoutX="181.0" layoutY="541.0" prefWidth="150.0" />
+      <Button fx:id="changeProviderButton" layoutX="25.0" layoutY="541.0" mnemonicParsing="false" onAction="#changeProvider" text="Change provider" />
+      <Label layoutX="25.0" layoutY="496.0" text="Change provider" textFill="#101010">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="60.0" fitWidth="86.0" layoutX="18.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mobile.png" />
+         </image></ImageView>
+      <ImageView fitHeight="71.0" fitWidth="102.0" layoutX="25.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@provider.png" />
+         </image>
+      </ImageView>
+          <Label layoutX="99.0" layoutY="181.0" text="Handy table" textFill="#101010">
+              <font>
+                  <Font name="System Bold" size="24.0" />
+              </font>
+          </Label>
+      <ImageView fitHeight="71.0" fitWidth="78.0" layoutX="687.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@chat-icon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="786.0" layoutY="528.0" mnemonicParsing="false" onAction="#changeSceneToChatView" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: gray;" text="START CHAT!" textFill="#ebe2e2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+    </children>
+</AnchorPane>
