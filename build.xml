@@ -36,9 +36,9 @@
     </junit>
   </target>
 
-  <target name="src">
+  <target name="SmsHandy">
     <antcall target="test">
-      <param name="current_task" value="src"/>
+      <param name="current_task" value="SmsHandy"/>
     </antcall>
   </target>
 
