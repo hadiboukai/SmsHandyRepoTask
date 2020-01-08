@@ -1,4 +1,4 @@
-<project name="INLOOP example checker" default="fail" basedir=".">
+<project name="SMSHANDY example checker" default="fail" basedir=".">
   <path id="lib.thirdparty">
     <fileset dir="lib">
       <include name="*.jar"/>
