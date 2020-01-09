@@ -3,4 +3,4 @@ services:
 install:
   - docker build -t inloop-java-example .
 script:
-  - ./docker.sh fibonacci
+  - ./docker.sh SmsHandy
